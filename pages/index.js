@@ -21,7 +21,7 @@ import React from 'react';
 // ];
 
 const HomePage = (props) => {
-    // console.log(props);
+    console.log(props);
     return <MeetupList meetups={props.meetups} />;
 };
 
@@ -67,7 +67,7 @@ export async function getStaticProps(context) {
                 };
             }),
         },
-        revalidate: 10,
+        revalidate: 1,
     };
 }
 

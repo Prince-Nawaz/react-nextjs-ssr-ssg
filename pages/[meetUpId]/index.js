@@ -108,6 +108,7 @@ export async function getStaticProps(context) {
                 address: selectedMeetup.address,
             },
         },
+        revalidate: 1,
     };
 }
 
