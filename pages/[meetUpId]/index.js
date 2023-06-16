@@ -58,7 +58,11 @@ export async function getStaticPaths() {
     //     ]
 
     return {
-        fallback: false, // if true pregenerate missing dynamic params while server gets the request
+        fallback: 'blocking',
+        // if false, then 404 error page
+        // if fallback set true pregenerate missing dynamic params pages while server gets the request
+        // if fallback set to 'blocking' then wait till it generates the new data page and serve it in difference
+        // to fallback as true where white page is show then UI updates
         paths: meetups.map((meetup) => ({
             params: { meetUpId: meetup._id.toString() },
         })),
